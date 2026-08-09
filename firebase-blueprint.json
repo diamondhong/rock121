@@ -1,0 +1,49 @@
+{
+  "entities": {
+    "ranking": {
+      "title": "Rock Paper Scissors Ranking",
+      "description": "Game completion result record for leaderboard ranking",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 20,
+          "description": "Student name or nickname"
+        },
+        "score": {
+          "type": "number",
+          "description": "Total calculated score (wins * 10)"
+        },
+        "wins": {
+          "type": "number",
+          "description": "Number of round wins"
+        },
+        "draws": {
+          "type": "number",
+          "description": "Number of round draws"
+        },
+        "losses": {
+          "type": "number",
+          "description": "Number of round losses"
+        },
+        "time": {
+          "type": "number",
+          "description": "Total game time in seconds"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp when record was saved"
+        }
+      },
+      "required": ["name", "score", "wins", "draws", "losses", "time", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/rockPaperScissorsRankings/{rankingId}": {
+      "schema": "ranking",
+      "description": "Leaderboard rankings collection"
+    }
+  }
+}

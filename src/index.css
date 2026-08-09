@@ -1,0 +1,36 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@400;600;700;800&display=swap');
+
+:root {
+  font-family: 'Jua', Pretendard, 'Noto Sans KR', 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f0fdf4;
+  color: #1e293b;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  user-select: none;
+}
+
+/* Ensure Korean text is never hidden or transparent */
+* {
+  color: inherit;
+}
+
+/* Custom pulse animations for countdown */
+@keyframes urgent-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+}
+
+.animate-urgent {
+  animation: urgent-pulse 0.6s infinite ease-in-out;
+}
